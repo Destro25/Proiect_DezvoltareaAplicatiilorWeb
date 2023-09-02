@@ -5,5 +5,7 @@
         public DateTime RentalDate { get; set; }
         public DateTime ReturnDate { get; set; }
         public double RentalCost { get; set; }
+
+        public string UserEmail { get; set; }
     }
 }
