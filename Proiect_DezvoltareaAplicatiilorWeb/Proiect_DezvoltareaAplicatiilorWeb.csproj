@@ -19,4 +19,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Repositories\MovieRepository\" />
+    <Folder Include="Repositories\AddressRepository\" />
+    <Folder Include="Repositories\MovieRentalRepository\" />
+    <Folder Include="Repositories\RentalRepository\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
