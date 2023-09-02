@@ -11,9 +11,9 @@ builder.Services.AddDbContext<ProjectContext>(options => options.UseSqlServer(bu
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
