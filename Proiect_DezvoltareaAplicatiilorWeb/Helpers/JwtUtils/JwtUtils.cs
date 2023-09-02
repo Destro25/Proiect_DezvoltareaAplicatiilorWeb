@@ -10,7 +10,7 @@ namespace Proiect_DezvoltareaAplicatiilorWeb.Helpers.JwtUtils
     {
         public readonly AppSettings _appSettings;
 
-        public JwtUtils(IOptions<AppSettings> appSettings, IConfiguration configuration)
+        public JwtUtils(IOptions<AppSettings> appSettings)
         {
             _appSettings = appSettings.Value;
         }
@@ -26,7 +26,7 @@ namespace Proiect_DezvoltareaAplicatiilorWeb.Helpers.JwtUtils
                     new[] { new Claim("id", user.Id.ToString()) }
                     ),
                 Expires = DateTime.UtcNow.AddDays(10),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(appPrivateKey), SecurityAlgorithms.Aes128CbcHmacSha256)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(appPrivateKey), SecurityAlgorithms.HmacSha256Signature)
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);

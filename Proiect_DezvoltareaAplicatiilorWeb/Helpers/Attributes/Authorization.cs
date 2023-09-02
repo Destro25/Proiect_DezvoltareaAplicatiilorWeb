@@ -22,12 +22,13 @@ namespace Proiect_DezvoltareaAplicatiilorWeb.Helpers.Attributes
             {
                 context.Result = unauthorizationStatusObject;
             }
-
             var user = (User)context.HttpContext.Items["User"];
+            //User? user = context.HttpContext.Items["User"] as User;
 
             if (user == null || !_roles.Contains(user.Role)) 
             {
                 context.Result = unauthorizationStatusObject;
+                //Console.WriteLine(user.UserName);
             }
         }
     }
