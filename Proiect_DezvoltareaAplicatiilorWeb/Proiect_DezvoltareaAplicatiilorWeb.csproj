@@ -21,10 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Repositories\MovieRepository\" />
-    <Folder Include="Repositories\AddressRepository\" />
-    <Folder Include="Repositories\MovieRentalRepository\" />
-    <Folder Include="Repositories\RentalRepository\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
