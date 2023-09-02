@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Proiect_DezvoltareaAplicatiilorWeb.Data;
+using Proiect_DezvoltareaAplicatiilorWeb.Helpers;
+using Proiect_DezvoltareaAplicatiilorWeb.Helpers.Extensions;
+using Proiect_DezvoltareaAplicatiilorWeb.Helpers.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +14,12 @@ builder.Services.AddDbContext<ProjectContext>(options => options.UseSqlServer(bu
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddRepositories();
+builder.Services.AddServices();
+builder.Services.AddUtils();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 var app = builder.Build();
 
@@ -26,6 +34,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<JwtMiddleware>();
 
 app.MapControllers();
 
