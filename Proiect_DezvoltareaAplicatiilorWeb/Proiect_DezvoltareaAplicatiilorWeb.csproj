@@ -20,12 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\Extensions\" />
     <Folder Include="Services\AddressService\" />
     <Folder Include="Services\MovieService\" />
     <Folder Include="Services\MovieRentalService\" />
     <Folder Include="Services\RentalService\" />
-    <Folder Include="Services\UserService\" />
   </ItemGroup>
 
 </Project>
