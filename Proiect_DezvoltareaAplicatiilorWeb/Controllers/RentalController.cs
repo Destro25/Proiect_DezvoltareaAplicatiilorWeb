@@ -32,7 +32,7 @@ namespace Proiect_DezvoltareaAplicatiilorWeb.Controllers
         //[Authorization(Role.Admin)]
         public async Task<IActionResult> GetAllRentals()
         {
-            return Ok(_rentalService.GetAll());
+            return Ok(await _rentalService.GetAll());
         }
 
         [HttpPost("make-a-rental")]
